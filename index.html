@@ -7,6 +7,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Мой календарь">
 <meta name="theme-color" content="#080B12">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <title>Мой календарь — Glass</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -151,6 +153,54 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 @media (max-width:460px){
   .title-block h1{font-size:20px}.stat-pill{padding:7px 9px}.stat-pill .num{font-size:13px}.stat-pill .lbl{font-size:9px}.day-num{font-size:12px}.cell-inner{height:42px}.detail-title{font-size:16px}.mode-row{align-items:flex-start}.block-row{gap:6px;grid-template-columns:auto 66px minmax(0,1fr)}}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* ===== 2026 GLASS MOBILE REDESIGN ===== */
+.safe-area{} 
+@media (max-width:760px){
+  body{background:
+    radial-gradient(520px 380px at -15% -5%,rgba(88,226,220,.16),transparent 62%),
+    radial-gradient(500px 420px at 115% 30%,rgba(169,149,255,.14),transparent 60%),
+    radial-gradient(460px 380px at 40% 110%,rgba(120,170,252,.08),transparent 65%),var(--bg);}
+  .app{padding:calc(10px + env(safe-area-inset-top)) 10px calc(32px + env(safe-area-inset-bottom));max-width:none}
+  .glass{border-color:rgba(255,255,255,.12);background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025));box-shadow:0 22px 70px -35px rgba(0,0,0,.88),0 1px 0 rgba(255,255,255,.09) inset}
+  .top-bar{padding:16px 15px;border-radius:22px;margin-bottom:11px;gap:13px;backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px)}
+  .title-block h1{font-size:22px;letter-spacing:-.55px}.title-block .sub{font-size:11px}
+  .stat-row{gap:6px}.stat-pill{min-width:0;padding:8px 9px;border-radius:14px;background:rgba(255,255,255,.045)}
+  .stat-pill .num{font-size:13px}.stat-pill .lbl{font-size:8.5px}
+  .calendar-card{padding:13px 8px 11px;border-radius:22px}.month-nav{margin:0 2px 9px}.month-nav .label{font-size:15px}
+  .cell-inner{height:45px;border-radius:13px;background:rgba(255,255,255,.032)}.cal-table{border-spacing:2px}.cal-table th{font-size:9px}
+  .legend{gap:8px;font-size:9px;padding-top:9px}
+  .data-card{padding:14px 11px;border-radius:22px}.table-head{margin-bottom:10px}.table-title{font-size:14px}.table-sub{font-size:9.5px}
+  .modal-backdrop{padding:8px;align-items:flex-end;background:rgba(2,5,10,.68);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+  .modal{width:100%;max-width:100%;min-width:0;max-height:92vh;min-height:0;height:auto;padding:18px 15px calc(20px + env(safe-area-inset-bottom));border-radius:28px 28px 20px 20px;background:linear-gradient(160deg,rgba(20,29,44,.94),rgba(8,12,20,.96));border-color:rgba(255,255,255,.15);box-shadow:0 -18px 80px -25px rgba(0,0,0,.9),0 1px 0 rgba(255,255,255,.1) inset;resize:none;overflow:auto}
+  .modal:after{content:'';position:absolute;left:50%;top:7px;transform:translateX(-50%);width:42px;height:4px;border-radius:99px;background:rgba(255,255,255,.16)}
+  .modal-close{right:11px;top:11px;width:38px;height:38px;border-radius:13px;background:rgba(255,255,255,.07)}
+  .detail-head{padding:3px 43px 0 2px;margin-bottom:4px}.detail-title{font-size:17px;line-height:1.25}.detail-sub{font-size:10.5px;margin-top:4px}.nav-arrows{gap:5px}.icon-btn-round{width:34px;height:34px}
+  .progress-wrap{margin:12px 2px 11px}.progress-label{font-size:10px}.progress-bar{height:6px}
+  .mode-row{margin:10px 2px;gap:8px}.switch{font-size:10.5px}.trip-btn{font-size:10px;padding:8px 10px}
+  .timeline{padding-left:0;display:grid;gap:8px}
+  .timeline:before{display:none}
+  .block-row{display:grid;grid-template-columns:28px minmax(0,1fr);grid-template-areas:"check meta" "text text";gap:6px 8px;padding:12px 11px 11px;margin:0;border:1px solid rgba(255,255,255,.075);border-radius:17px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));box-shadow:0 10px 28px -22px rgba(0,0,0,.9),0 1px 0 rgba(255,255,255,.045) inset;align-items:start}
+  .block-row:before{left:auto;right:10px;top:10px;width:5px;height:5px;border-width:1px;opacity:.8}
+  .block-row.now{margin:0;padding:12px 11px 11px;background:linear-gradient(145deg,rgba(255,195,107,.10),rgba(255,255,255,.025));border-color:rgba(255,195,107,.22)}
+  .block-row input[type=checkbox]{grid-area:check;width:19px;height:19px;margin:1px 0 0}
+  .time-edit{grid-area:meta;display:flex;align-items:center;justify-content:flex-start;gap:4px;min-width:0}
+  .time-edit input{width:62px;height:30px;font-size:11px;border-radius:9px;background:rgba(88,226,220,.055);border-color:rgba(88,226,220,.10);padding:4px 3px}
+  .time-edit span{font-size:10px}.block-text-wrap{grid-area:text;min-width:0;width:100%}
+  .text-input,.note-input{display:block;width:100%;min-width:0;max-width:100%;box-sizing:border-box;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;overflow:hidden;resize:none}
+  textarea.text-input{min-height:36px;font-size:12px;line-height:1.42;padding:7px 8px;background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.055);border-radius:10px}
+  textarea.note-input{min-height:29px;font-size:10px;line-height:1.35;padding:5px 8px;margin-top:4px;background:rgba(255,255,255,.018);border-radius:9px}
+  .now-badge{margin:5px 0 0 2px}.block-row.done{background:linear-gradient(145deg,rgba(34,197,94,.10),rgba(250,204,21,.035),rgba(255,255,255,.018));border-color:rgba(34,197,94,.18)}
+  .weekend-item,.extra-item{padding:9px 7px;border:1px solid rgba(255,255,255,.065);border-radius:14px;background:rgba(255,255,255,.025);margin-bottom:6px}.weekend-item:last-child,.extra-item:last-child{border-bottom:1px solid rgba(255,255,255,.065)}
+  .weekend-item .text-input,.extra-item .text-input{min-height:36px}.section-title{margin:14px 2px 7px;font-size:10.5px}
+  .add-row{gap:6px}.add-row input,textarea.notes{font-size:11px;border-radius:12px;padding:10px}.add-row button{width:42px;border-radius:12px}
+  .notes{min-height:80px}.actions{margin-top:14px}.actions .btn{flex:1;min-height:40px}
+}
+@media (max-width:390px){
+  .app{padding-left:8px;padding-right:8px}.top-bar{padding:14px 12px}.stat-pill{padding:7px 7px}.stat-pill .lbl{font-size:8px}
+  .modal{padding-left:13px;padding-right:13px}.block-row{padding-left:9px;padding-right:9px}.time-edit input{width:59px}
+}
+
 </style>
 </head>
 <body>
@@ -350,6 +400,8 @@ function toMin(hhmm){ if(!/^\d{1,2}:\d{2}$/.test(hhmm)) return null; const [h,m]
 function jsWeekdayOf(dateStr){ const [y,m,d]=dateStr.split('-').map(Number); return new Date(y,m-1,d).getDay(); }
 function isVacation(dateStr){ return VACATIONS.find(v=>dateStr>=v.start && dateStr<=v.end) || null; }
 function escapeAttr(str){ return String(str==null?'':str).replace(/&/g,'&amp;').replace(/"/g,'&quot;'); }
+function escapeHtml(str){ return String(str==null?'':str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
 function debtUid(){ return 'd'+Date.now()+'-'+(debtSeq++); }
 
 function uid(prefix='id'){ return prefix+'-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8); }
@@ -638,7 +690,7 @@ function renderDetail(){
       const txt = dstate.weekendTexts[i] ?? defaultTxt;
       return `<div class="weekend-item">
         <input type="checkbox" data-kind="wcheck" data-i="${i}" ${checked?'checked':''}>
-        <input class="text-input ${checked?'done':''}" data-kind="wtext" data-i="${i}" value="${escapeAttr(txt)}">
+        <textarea class="text-input ${checked?'done':''}" data-kind="wtext" data-i="${i}" rows="1">${escapeHtml(txt)}</textarea>
       </div>`;
     }).join('');
   } else {
@@ -673,9 +725,9 @@ function renderDetail(){
             <input data-kind="edit" data-i="${i}" data-field="end" value="${escapeAttr(eff.end)}" size="5">
           </div>
           <div class="block-text-wrap">
-            <input class="text-input ${checked?'done':''}" data-kind="edit" data-i="${i}" data-field="text" value="${escapeAttr(eff.text)}">
+            <textarea class="text-input ${checked?'done':''}" data-kind="edit" data-i="${i}" data-field="text" rows="1">${escapeHtml(eff.text)}</textarea>
             ${isNow?'<span class="now-badge">сейчас</span>':''}
-            <input class="note-input" data-kind="edit" data-i="${i}" data-field="note" value="${escapeAttr(eff.note)}" placeholder="заметка (необязательно)">
+            <textarea class="note-input" data-kind="edit" data-i="${i}" data-field="note" rows="1" placeholder="заметка (необязательно)">${escapeHtml(eff.note)}</textarea>
           </div>
         </div>`;
       }).join('') + `</div>`;
@@ -686,7 +738,7 @@ function renderDetail(){
   let extraHtml = `<div class="section-title">Тесты и дела</div>` +
     dstateAny.extra.map((it,i)=>`<div class="extra-item">
       <input type="checkbox" data-kind="xcheck" data-i="${i}" ${it.done?'checked':''}>
-      <input class="text-input" data-kind="xtext" data-i="${i}" value="${escapeAttr(it.text)}">
+      <textarea class="text-input" data-kind="xtext" data-i="${i}" rows="1">${escapeHtml(it.text)}</textarea>
       <button class="del" data-kind="xdel" data-i="${i}">×</button>
     </div>`).join('') +
     `<div class="add-row"><input id="addInput" placeholder="Добавить тест или дело…"><button id="addBtn">+</button></div>`;
@@ -723,7 +775,15 @@ function renderDetail(){
     </div>
   `;
 
+  autoGrowDetailTextareas();
   attachDetailHandlers();
+}
+
+function autoGrowDetailTextareas(){
+  document.querySelectorAll("#detailContent textarea.text-input, #detailContent textarea.note-input").forEach(t=>{
+    t.style.height="auto";
+    t.style.height=Math.max(34, Math.min(t.scrollHeight, 180))+"px";
+  });
 }
 
 function computeProgress(dateStr, wd, vac){
@@ -770,6 +830,7 @@ function attachDetailHandlers(){
   });
   document.querySelectorAll('[data-kind="edit"]').forEach(inp=>{
     inp.addEventListener('input', e=>{
+      if(e.target.tagName==='TEXTAREA'){e.target.style.height='auto'; e.target.style.height=Math.max(34,Math.min(e.target.scrollHeight,180))+'px';}
       const i=e.target.dataset.i, field=e.target.dataset.field;
       if(!dstate.edits[i]) dstate.edits[i] = {};
       dstate.edits[i][field] = e.target.value;
@@ -781,7 +842,7 @@ function attachDetailHandlers(){
     cb.addEventListener('change', e=>{ dstate.weekendChecks[e.target.dataset.i] = e.target.checked; saveState(); renderDetail(); });
   });
   document.querySelectorAll('[data-kind="wtext"]').forEach(inp=>{
-    inp.addEventListener('input', e=>{ dstate.weekendTexts[e.target.dataset.i] = e.target.value; debouncedSave(); });
+    inp.addEventListener('input', e=>{ if(e.target.tagName==='TEXTAREA'){e.target.style.height='auto';e.target.style.height=Math.max(34,Math.min(e.target.scrollHeight,180))+'px';} dstate.weekendTexts[e.target.dataset.i] = e.target.value; debouncedSave(); });
     inp.addEventListener('blur', saveState);
   });
 
@@ -789,7 +850,7 @@ function attachDetailHandlers(){
     cb.addEventListener('change', e=>{ dstate.extra[+e.target.dataset.i].done = e.target.checked; saveState(); renderGrid(); renderDetail(); });
   });
   document.querySelectorAll('[data-kind="xtext"]').forEach(inp=>{
-    inp.addEventListener('input', e=>{ dstate.extra[+e.target.dataset.i].text = e.target.value; debouncedSave(); });
+    inp.addEventListener('input', e=>{ if(e.target.tagName==='TEXTAREA'){e.target.style.height='auto';e.target.style.height=Math.max(34,Math.min(e.target.scrollHeight,180))+'px';} dstate.extra[+e.target.dataset.i].text = e.target.value; debouncedSave(); });
     inp.addEventListener('blur', saveState);
   });
   document.querySelectorAll('[data-kind="xdel"]').forEach(btn=>{
